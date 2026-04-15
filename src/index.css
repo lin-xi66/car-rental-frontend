@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: #f8fafc;
+  color: #1e293b;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 统一圆角系统 */
+@layer components {
+  /* 主按钮 - 更醒目的渐变风格 */
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5;
+  }
+
+  /* 次要按钮 - 边框样式 */
+  .btn-secondary {
+    @apply bg-white hover:bg-gray-50 text-gray-700 font-medium py-3 px-6 rounded-xl border border-gray-200 hover:border-gray-300 transition-all duration-200 shadow-sm hover:shadow-md;
+  }
+
+  /* 卡片 - 更柔和的阴影 */
+  .card {
+    @apply bg-white rounded-2xl shadow-lg border border-gray-100/80 overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+  }
+
+  /* 徽章样式 */
+  .badge {
+    @apply inline-flex items-center px-3 py-1 rounded-lg text-xs font-semibold;
+  }
+
+  /* 输入框统一样式 */
+  input, select, textarea {
+    @apply border border-gray-200 rounded-xl px-4 py-2.5 text-sm transition-all duration-200;
+    @apply focus:outline-none focus:ring-2 focus:ring-primary-500/30 focus:border-primary-500;
+  }
+
+  /* 表格样式 */
+  table {
+    @apply w-full border-collapse;
+  }
+  th {
+    @apply bg-gray-50 text-gray-600 text-xs font-semibold uppercase tracking-wider py-3 px-4 text-left;
+  }
+  td {
+    @apply py-3 px-4 text-sm text-gray-700 border-b border-gray-100;
+  }
+  tr:hover td {
+    @apply bg-gray-50/50;
+  }
+}
+
+/* 滚动条美化 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* 动画效果 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.animate-slideUp {
+  animation: slideUp 0.4s ease-out;
+}
+
+.animate-scaleIn {
+  animation: scaleIn 0.2s ease-out;
+}
+
+/* 图片加载占位 */
+img {
+  @apply bg-gray-200;
+}
+
+/* 链接样式 */
+a {
+  @apply text-primary-600 hover:text-primary-700 transition-colors duration-200;
+}

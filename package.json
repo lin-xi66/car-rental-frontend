@@ -1,0 +1,10 @@
+{
+  "name": "car-rental",
+  "version": "1.0.0",
+  "description": "Car Rental System Frontend",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  }
+}
